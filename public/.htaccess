@@ -1,0 +1,7 @@
+Options -Multiviews
+RewriteEngine On
+
+# Redirect semua request ke index.php jika file/folder tidak ada
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]

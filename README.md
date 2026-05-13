@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- ANIMATED HEADER TYPING -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=36&duration=3000&pause=1000&color=0D6EFD&center=true&vCenter=true&width=700&height=70&lines=DEMO+API+WRAPPER;Multi-Version+YoBasePay;Clean+Architecture+PHP+MVC;Automated+HMAC+Security" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=36&duration=3000&pause=1000&color=0D6EFD&center=true&vCenter=true&width=700&height=70&lines=DEMO+API+WRAPPER+V3;Multi-Version+YoBasePay;Clean+Architecture+PHP+MVC;Automated+HMAC+Security" alt="Typing SVG" />
 
 <p align="center">
   <strong>High-performance Native PHP Payment Wrapper Engine</strong>

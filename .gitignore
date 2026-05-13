@@ -1,0 +1,18 @@
+# PHP Specific Ignore
+.phpunit.result.cache
+.phpunit.cache
+
+# OS Specific Ignore
+.DS_Store
+Thumbs.db
+
+# IDE Specific Ignore
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Local Development specific
+*.log
+tmp/
+temp/
