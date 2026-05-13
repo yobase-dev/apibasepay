@@ -1,102 +1,151 @@
-# DEMO API Payment Gateway Wrapper
+<div align="center">
 
-Platform Payment Gateway Wrapper berbasis **PHP Native MVC** yang dirancang khusus untuk meneruskan pembayaran, mengelola saldo merchant, serta menjembatani sistem Anda dengan multi-versi **YoBasePay Gateway (V1 / V2 / V3)** secara dinamis.
+<!-- ANIMATED HEADER TYPING -->
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=36&duration=3000&pause=1000&color=0D6EFD&center=true&vCenter=true&width=700&height=70&lines=⚡+DEMO+API+WRAPPER+V3;🚀+Multi-Version+YoBasePay;📁+Clean+Architecture+PHP+MVC;🔐+Automated+HMAC+Security" alt="Typing SVG" />
+
+<p align="center">
+  <strong>High-performance Native PHP Payment Wrapper Engine</strong>
+</p>
+
+<!-- DYNAMIC ANIMATED BADGES -->
+<a href="https://php.net">
+  <img src="https://img.shields.io/badge/PHP-7.4%2B%20%7C%208.x-blue?style=for-the-badge&logo=php&logoColor=white" alt="PHP Version" />
+</a>
+<a href="https://getbootstrap.com">
+  <img src="https://img.shields.io/badge/UI-Bootstrap%205-7952b3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap 5" />
+</a>
+<a href="https://mysql.com">
+  <img src="https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+</a>
+<a href="#">
+  <img src="https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge" alt="MIT License" />
+</a>
+
+<br />
+<hr style="border: 1px dashed #dee2e6" />
+
+</div>
+
+## ✨ Pengenalan Singkat
+
+Platform Payment Gateway Wrapper canggih berbasis **PHP Native MVC** yang dirancang khusus untuk menjembatani aplikasi e-commerce Anda dengan ekosistem multi-versi **YoBasePay Gateway (V1 / V2 / V3)** secara aman, real-time, dan otomatis.
 
 ---
 
-## 🚀 Fitur Utama
+## 🎮 Fitur Unggulan Animatif
 
-1. **Arsitektur PHP MVC Kustom**: Dibuat secara native, sangat ringan, tanpa dependensi berat, dan berkinerja tinggi.
-2. **Routing Bersih (Clean URL)**: Didukung oleh penataan `.htaccess` pintar di tingkat root dan public directory.
-3. **Multi-Proyek Terpisah**: Memungkinkan merchant membuat beberapa aplikasi mandiri dengan kredensial unik.
-4. **Versi API Dinamis**: Pilih secara spesifik rute backend gateway (V1, V2, atau V3) untuk masing-masing proyek yang Anda kelola.
-5. **Autentikasi Bearer Ganda**: Mendukung otentikasi global (`Merchant Key`) maupun otentikasi spesifik (`Project Key`).
-6. **Keamanan Webhook HMAC**: Menandatangani notifikasi callback ke server Anda menggunakan algoritma enkripsi HMAC-SHA256 untuk memvalidasi keaslian transaksi.
-7. **Portal Dokumentasi Terintegrasi**: Panduan integrasi komprehensif interaktif langsung dari Dasbor.
+<details open>
+<summary><b>✨ Klik Untuk Melihat Keunggulan Platform</b></summary>
+<br/>
+
+*   🤖 **Routing Clean URL**: Didukung oleh engine `.htaccess` pintar yang menghilangkan ekstensi berkas secara otomatis.
+*   📦 **Multi-Proyek Merchant**: Buat ratusan proyek dengan kredensial `Project Key (PRJ_)` terisolasi.
+*   🔄 **Target Versi Dinamis**: Tentukan secara spesifik backend API tujuan (V1, V2, atau V3) pada setiap proyek aplikasi.
+*   🔒 **Validasi Webhook HMAC**: Enkripsi tandatangan searah **SHA256** menjamin notifikasi sukses 100% otentik.
+*   🍃 **Native MVC Engine**: Dibuat dari nol, nol dependensi pihak ketiga (Zero bloating), berkinerja super kilat!
+*   🧩 **SVG Captcha Generator**: Pelindung keamanan formulir pendaftaran anti-bot yang 100% bebas ketergantungan ekstensi server.
+</details>
 
 ---
 
-## 📁 Struktur Folder Proyek
+## 🎨 Pratinjau Arsitektur Folder
 
-```text
-demoapi/
-├── app/                    # Inti Logika Aplikasi (MVC)
-│   ├── config/             # File Konfigurasi URL, DB, & API Credentials
-│   ├── controllers/        # Logika Controller Halaman & Endpoint API
-│   ├── core/               # Engine Utama (App Router, Controller Base, PDO Database)
-│   ├── models/             # Logika Query Database (User, Transaction, Projects)
-│   └── views/              # Kumpulan Template UI/UX Mode Terang
-├── public/                 # Akses Publik Web Server (index.php, .htaccess)
-├── database.sql            # Skema Struktur Basis Data SQL Lengkap
-├── .htaccess               # Penanganan Rewrite URL untuk Laragon/Apache
-└── README.md               # Dokumentasi ini
+```mermaid
+graph TD
+    A[demoapi/] --> B[app/]
+    A --> C[public/]
+    B --> D[core/ - Engine Utama]
+    B --> E[controllers/ - API Dispatcher]
+    B --> F[models/ - Database Layer]
+    B --> G[views/ - UI Bootstrap 5]
+    C --> H[index.php - Entry Point]
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#dfd,stroke:#333,stroke-width:2px
+    style G fill:#ffd,stroke:#333,stroke-width:2px
 ```
 
 ---
 
-## ⚙️ Panduan Pemasangan (Instalasi)
+## 🛠️ Langkah Pemasangan Visual
 
-### 1. Persyaratan Sistem
-- **Laragon** / **XAMPP** (Rekomendasi PHP versi 7.4 hingga 8.2+)
-- **MySQL / MariaDB** aktif.
-- Modul `mod_rewrite` Apache diaktifkan.
+#### 1️⃣ Persiapan Sistem
+*   Aktifkan **Laragon** / **XAMPP** (PHP 7.4 - 8.2+).
+*   Pastikan modul **Apache Rewrite (`mod_rewrite`)** aktif.
 
-### 2. Langkah Setup Database
-1. Buka **phpMyAdmin** atau client SQL pilihan Anda (HeidiSQL / DBeaver).
-2. Buat basis data baru bernama `demoapi_db`.
-3. Impor struktur tabel dari file [database.sql](file:///c:/laragon/www/demoapi/database.sql) yang berada di folder utama root proyek.
+#### 2️⃣ Inisialisasi Database
+1.  Buka manajer basis data Anda (HeidiSQL / phpMyAdmin).
+2.  Eksekusi skema terstruktur lengkap dari:
+    > 👉 **[`database.sql`](file:///c:/laragon/www/demoapi/database.sql)**
 
-### 3. Konfigurasi Kredensial
-Buka file konfigurasi di `app/config/config.php` lalu sesuaikan kredensial DB Anda:
+#### 3️⃣ Konfigurasi Kredensial Lokal
+Buka berkas konfigurasi Anda:
 ```php
+// file: app/config/config.php
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', ''); // isi password jika ada
 define('DB_NAME', 'demoapi_db');
+define('DB_USER', 'root');
+define('DB_PASS', ''); // sesuaikan password database Anda
 ```
-
-### 4. Akses Dashboard
-Jalankan server lokal dan buka peramban Anda pada:
-```text
-http://localhost/demoapi
-```
-**Kredensial Bawaan (Default):**
-- Username: `admin`
-- Password: `password123`
 
 ---
 
-## 📡 Referensi API Ringkas
+## 📡 API Command Reference Center
 
-Semua permintaan API memerlukan penyematan HTTP Header Otentikasi:
-`Authorization: Bearer {MERCHANT_API_KEY_ATAU_PROJECT_KEY}`
+<div align="center">
+  <img src="https://img.shields.io/badge/Header-Authorization%3A%20Bearer%20%7BKey%7D-red?style=flat-square" alt="Auth Header" />
+</div>
 
-### 1. Buat Pembayaran (Create)
-- **Endpoint**: `/api/v1/payments/create`
-- **Metode**: `POST`
-- **Payload JSON**:
-  ```json
-  {
-    "amount": 25000,
-    "ref_id": "INV-RANDOM-123",
-    "customer_name": "Budi Santoso"
-  }
-  ```
+| Metode | Endpoint | Fungsi & Keterangan |
+| :---: | :--- | :--- |
+| <kbd><b>POST</b></kbd> | `/api/v1/payments/create` | Membuat tautan & Gambar QRIS baru. |
+| <kbd><b>GET</b></kbd> | `/api/v1/payments/status/{id}` | Polling / Cek status pembayaran spesifik. |
+| <kbd><b>POST</b></kbd> | `/api/webhook` | Penerima callback gerbang YoBasePay. |
 
-### 2. Cek Status Transaksi
-- **Endpoint**: `/api/v1/payments/status/{ref_id_atau_trx_id}`
-- **Metode**: `GET`
+<br/>
 
-### 3. Struktur Webhook Signature
-Platform ini mengirimkan header `X-DemoAPI-Signature` berisi kode HMAC-SHA256.
-Cara validasi di backend server merchant:
+#### 🚀 Snippet cURL Pembuatan QRIS Instan:
+```bash
+curl -X POST "http://localhost/demoapi/api/v1/payments/create" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+  "amount": 25000,
+  "ref_id": "INV-UNIQUE-REF-123",
+  "customer_name": "Budi Santoso"
+}'
+```
+
+---
+
+## 🔐 Verifikasi Tanda Tangan Webhook (HMAC-SHA256)
+Berikut visualisasi alur logika otentikasi callback pada server backend Anda:
+
 ```php
-$signature = hash_hmac('sha256', file_get_contents('php://input'), 'API_KEY_ANDA');
+<?php
+$rawPayload = file_get_contents('php://input');
+$headers = apache_request_headers();
+$receivedSig = $headers['X-DemoAPI-Signature'] ?? '';
+
+// Buat hash pencocokan lokal menggunakan API Key Anda
+$expectedSig = hash_hmac('sha256', $rawPayload, 'KUNCI_API_MERCHANT_ANDA');
+
+if (hash_equals($expectedSig, $receivedSig)) {
+    // 🌟 LUNAS! Data otentik & Terverifikasi secara sah.
+    echo json_encode(["status" => "OK"]);
+} else {
+    http_response_code(401);
+}
+?>
 ```
 
 ---
 
-## 🏆 Teknologi yang Digunakan
-- **Backend**: PHP Core Native (Object-Oriented) + PDO Driver
-- **Frontend**: Bootstrap 5 (Mode Terang Minimalis), AOS Library (Animate On Scroll), FontAwesome 6 Icons.
-- **Database**: MySQL / MariaDB.
+<div align="center">
+
+### 💎 Dibuat dengan Penuh Semangat
+
+<img src="https://forthebadge.com/images/featured/featured-built-with-love.svg" height="30" />
+<img src="https://forthebadge.com/images/featured/featured-coffe-powered.svg" height="30" />
+
+</div>
